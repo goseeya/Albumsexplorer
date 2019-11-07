@@ -1,6 +1,6 @@
 {
-  "short_name": "Postsexplorer",
-  "name": "Postsexplorer",
+  "short_name": "Albumsexplorer",
+  "name": "Albumsexplorer",
   "icons": [
     {
       "src": "explore-icon.png",

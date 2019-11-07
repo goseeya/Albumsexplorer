@@ -1,11 +1,28 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import LoggedScreen from './containers/LoggedScreen/LoggedScreen';
+import LoginScreen from './containers/LoginScreen/LoginScreen';
+
+
 import './App.css';
 
+
 const App = () => {
+
+
   return (
-    <div className="App">
-      Im inside apppppp
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={LoggedScreen} />
+        <Route path="/login" component={LoginScreen} />
+        <Route path='/' component={() => {
+           window.location.href = "https://notfound.fwebservices.be/404/build?server=false&key=5db589c287299";
+           return null;
+        }}/>
+      </Switch>
+    </BrowserRouter>
+
   );
 }
 
