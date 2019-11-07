@@ -14,6 +14,7 @@ const Topbar = () => {
 
   const onButtonClick = () => {
     dispatch(actions.fetchAlbumsStart(searchValue));
+    dispatch(actions.fetchUsersStart());
   }
 
   const handleChange = event => {

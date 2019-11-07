@@ -31,3 +31,34 @@ export const fetchMainAlbum = (keyword) => {
     album: keyword
   }
 }
+
+export const fetchUsersStart = () => {
+  return dispatch => {
+    axios.get('https://jsonplaceholder.typicode.com/users')
+     .then(res => {
+       dispatch(fetchUsersSuccess(res))})
+     .catch(error => {
+      dispatch(fetchUsersFail());
+    })
+  }
+}
+
+export const fetchUsersSuccess = (users) => {
+  return {
+    type: actionTypes.FETCH_USERS_SUCCESS,
+    users: users
+  }
+}
+
+export const fetchUsersFail = () => {
+  return {
+    type: actionTypes.FETCH_USERS_FAIL
+  }
+}
+
+// export const fetchMainAlbum = (keyword) => {
+//   return {
+//     type: actionTypes.FETCH_MAIN_ALBUM,
+//     album: keyword
+//   }
+// }

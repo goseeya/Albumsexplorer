@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
   albums: null,
   album: null,
+  users: null,
   loading: false,
   error: false
 };
@@ -32,6 +33,23 @@ const albumsReducer = (state = initialState, action) => {
         loading: false,
         error: true
       }
+      case actionTypes.FETCH_USERS_START:
+        return {
+          ...state,
+          loading: true
+        }
+      case actionTypes.FETCH_USERS_SUCCESS:
+        return {
+          ...state,
+          users: action.users,
+          loading: false
+        }
+      case actionTypes.FETCH_USERS_FAIL:
+        return {
+          ...state,
+          loading: false,
+          error: true
+        }
     default:
       return {
         ...state
