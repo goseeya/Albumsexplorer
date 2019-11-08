@@ -1,15 +1,27 @@
-import React from 'react';
-import { StyledAlbumItem } from './AlbumItem.styled';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';import { StyledAlbumItem } from './AlbumItem.styled';
+import axios from 'axios';
 
-const AlbumItem = ({ onAlbumClick, key, title, src, width, height }) => {
+const AlbumItem = ({ onAlbumClick, key, title, userId }) => {
+  const [username, setUsername] = useState(null);
+
+  useEffect( () => {
+    axios.get(
+      `https://jsonplaceholder.typicode.com/users/${userId}`
+  )
+  .then(res => {
+    console.log(res)
+    setUsername(res.data.username)
+  });
+});
+
   return (
     <StyledAlbumItem>
-      <div
+      { username && <div
         onClick={onAlbumClick}
         key={key}>
-        <img alt="albumItem" src={src} width={width} height={height} />
-        <div>{title}</div>
-      </div>
+        AlbumItem<div>{username}</div>
+      </div> }
     </StyledAlbumItem>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { StyledSidebar } from './Sidebar.styled';
 import AlbumItem from '../../components/Navigation/Sidebar/AlbumItem/AlbumItem';
@@ -12,25 +12,33 @@ const Sidebar = () => {
 
   const [usernames, setUsernames] = useState(null);
   let userNames = null;
-
+  let userNamesReady = false;
+  let albumsToRender = null;
   const openMain = (albumId) => {
     dispatch(actions.fetchMainAlbum(albumId))
   }
   console.log(users);
-  // const getUserByUserId = () => {
-  //   axios.get(`https://jsonplaceholder.typicode.com/users`)
-  //    .then(res =>
-  //      console.log(res)
-  //      // {
-  //      // setUsernames(res.data);
-  //    //   dispatch(fetchAlbumsSuccess(res))})
-  //    // .catch(error => {
-  //    //  dispatch(fetchAlbumsFail());
-  //    // return res.data;
-  //    // res.json()
-  //   // }
+  // const getUsernameByUserId = (userId) => {
+  //   let response = null;
+    
+  //   axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
+  //    .then(res => {
+  //      console.log(res.data.username)
+  //      response = res.data.username
+  //    })
+  //    return 'UsrFromFunc' + response
+    //  return response;
+      //  console.log(res)
+       // {
+       // setUsernames(res.data);
+     //   dispatch(fetchAlbumsSuccess(res))})
+     // .catch(error => {
+     //  dispatch(fetchAlbumsFail());
+     // return res.data;
+     // res.json()
+    // }
   // )
-  //   .then(res => userNames = res)
+    // .then(res => userNames = res)
   // }
   //
   //
@@ -38,15 +46,23 @@ const Sidebar = () => {
   // console.log(getUserByUserId(1));
   // getUserByUserId();
 
+  // useEffect(() => {
+  //   albumsToRender = albums ? albums.data.map(album => <div><p>{album.title}</p><p style={{backgroundColor: 'pink'}}>Username: {getUsernameByUserId(album.userId)}</p></div>) : null
+  // })
+
   return (
     <StyledSidebar>
-    {albums && JSON.stringify(albums)}
-    {users && JSON.stringify(users)}
-
-    {JSON.stringify(userNames)}
-      { (albums && users) && (
-          albums.data.map(album => <div><p>{album.title}</p><p style={{backgroundColor: 'pink'}}>{users[album.userId]}</p></div>)
-        )}
+    {/* {albums && JSON.stringify(albums)} */}
+    {/* {users && JSON.stringify(users)} */}
+    {/* {JSON.stringify(albums)}
+    {albumsToRender} */}
+    { albums && 
+    albums.data.map(album =>
+  <AlbumItem
+    onAlbumClick={() => openMain(album.id)}
+    key={album.id}
+    title={'fdd'}
+    userId={album.userId} />)}
     </StyledSidebar>
   )
 }

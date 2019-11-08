@@ -13,7 +13,7 @@ const Topbar = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const onButtonClick = () => {
-    dispatch(actions.fetchAlbumsStart(searchValue));
+    dispatch(actions.fetchAlbumsStart(0,10));
     dispatch(actions.fetchUsersStart());
   }
 
