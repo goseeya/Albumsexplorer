@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { useSelector } from 'react-redux';
@@ -10,6 +10,13 @@ const AlbumDetailed = ({ title, username, usermail, userphone, userwebsite, phot
   const album = useSelector(({ albumsReducer }) => albumsReducer.album);
   const loading = useSelector(state => state.albumsReducer.loading);
   const shortcut = "https://www.youtube.com/embed/";
+  const [showPic, setShowPic] = useState(false)
+  const [url, setUrl] = useState();
+
+  const showBigPicture = (url) => {
+    setShowPic(true);
+    setUrl(url);
+  }
 
   return (
     <StyledAlbumDetailed>
@@ -20,8 +27,10 @@ const AlbumDetailed = ({ title, username, usermail, userphone, userwebsite, phot
           <p>{usermail}</p>
           <p>{userphone}</p>
           <p>{userwebsite}</p>
-          {photos.map(photo => <div><p>{photo.title}</p><img src={photo.thumbnailUrl} /></div>)}
+
+          {photos.map(photo => <div><p>{photo.title}</p><img onClick={() => showBigPicture(photo.url)} src={photo.thumbnailUrl} /></div>)}
           </div>}
+          {showPic && <div><img src={url} /><button onClick={() => setShowPic(false)}>close</button></div>}
     </StyledAlbumDetailed>
   );
 }

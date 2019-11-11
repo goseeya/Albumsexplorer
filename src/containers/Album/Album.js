@@ -20,6 +20,7 @@ const Album = () => {
 
   const [posts, setPosts] = useState();
 
+  const history = useHistory();
 
 
   const currAlbumDetailed = useSelector(state => state.albumsReducer.album);
@@ -64,7 +65,7 @@ console.log('currAlbumDetailed', currAlbumDetailed);
 console.log('userData', userData);
 
 const goBack = () => {
-
+  history.goBack()
 }
 
   return (
