@@ -33,16 +33,10 @@ export const fetchMainAlbum = (keyword) => {
 }
 
 export const fetchMainUserData = (userId) => {
-  return dispatch => {
-    axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
-    .then(res => {
       return {
         type: actionTypes.FETCH_MAIN_USER_DATA,
-        userData: res
+        userData: userId
       }
-    })
-  }
-
 }
 
 export const fetchUsersStart = () => {

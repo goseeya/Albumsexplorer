@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { useSelector } from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import { StyledAlbumDetailed } from './AlbumDetailed.styled';
+import { StyledPostsDetailed } from './PostsDetailed.styled';
 
-const AlbumDetailed = ({ title, username, usermail, userphone, userwebsite, photos }) => {
+const PostsDetailed = ({ title, username, usermail, userphone, userwebsite, photos }) => {
 
   const album = useSelector(({ albumsReducer }) => albumsReducer.album);
   const loading = useSelector(state => state.albumsReducer.loading);
