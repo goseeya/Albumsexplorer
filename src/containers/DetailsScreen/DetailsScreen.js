@@ -6,15 +6,16 @@ import Album from '../Album/Album';
 import Sidebar from '../../containers/Sidebar/Sidebar';
 import Topbar from '../Topbar/Topbar';
 
-const LoggedScreen = () => {
+const DetailsScreen = () => {
 
   return (
     <Provider store={store}>
       <Topbar />
-      <Sidebar />
+      <p>Details hereeee</p>
+      <Album />
     </Provider>
 
   );
 }
 
-export default LoggedScreen;
+export default DetailsScreen;

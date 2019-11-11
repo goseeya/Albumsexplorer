@@ -20,7 +20,7 @@ const AlbumItem = ({ onAlbumClick, key, title, userId }) => {
       { username && <div
         onClick={onAlbumClick}
         key={key}>
-        AlbumItem<div>{username}</div>
+        {title}<div>{username}</div>
       </div> }
     </StyledAlbumItem>
   )

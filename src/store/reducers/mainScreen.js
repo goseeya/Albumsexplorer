@@ -5,7 +5,8 @@ const initialState = {
   album: null,
   users: null,
   loading: false,
-  error: false
+  error: false,
+  userData: null
 };
 
 const albumsReducer = (state = initialState, action) => {
@@ -49,6 +50,11 @@ const albumsReducer = (state = initialState, action) => {
           ...state,
           loading: false,
           error: true
+        }
+      case actionTypes.FETCH_MAIN_USER_DATA:
+        return {
+          ...state,
+          userData: action.userData
         }
     default:
       return {

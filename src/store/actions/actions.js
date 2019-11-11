@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
-export const fetchAlbumsStart = (start, limit) => {
+export const fetchAlbumsStart = (start) => {
   return dispatch => {
-    axios.get(`https://jsonplaceholder.typicode.com/albums?_start=${start}&_limit=${limit}`)
+    axios.get(`https://jsonplaceholder.typicode.com/albums?_start=${start}&_limit=10`)
      .then(res => {
        dispatch(fetchAlbumsSuccess(res))})
      .catch(error => {
@@ -30,6 +30,19 @@ export const fetchMainAlbum = (keyword) => {
     type: actionTypes.FETCH_MAIN_ALBUM,
     album: keyword
   }
+}
+
+export const fetchMainUserData = (userId) => {
+  return dispatch => {
+    axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    .then(res => {
+      return {
+        type: actionTypes.FETCH_MAIN_USER_DATA,
+        userData: res
+      }
+    })
+  }
+
 }
 
 export const fetchUsersStart = () => {
