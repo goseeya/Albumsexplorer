@@ -19,7 +19,7 @@
     "testcafe": "^1.6.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "testcafe": "./node_modules/.bin/testcafe",
     "test": "npm run testcafe chrome test.js",
