@@ -13,6 +13,7 @@ You will also see any lint errors in the console.
 ### `heroku open`
 
 Runs the app in the production mode.<br />
+https://albumsexplorer.herokuapp.com/
 
 ### `npm test`
 
