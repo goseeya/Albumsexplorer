@@ -6,9 +6,8 @@ export const StyledTopbar = styled.div`
   display: flex;
   background-color: white;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
-  align-content: center;
   width: 100%;
   height: 56px;
   padding-top: 10px;
@@ -16,5 +15,6 @@ export const StyledTopbar = styled.div`
   @media (max-width: 500px) {
     flex-direction: column;
     height: 80px;
+    padding-top: 40px;
   }
 `;

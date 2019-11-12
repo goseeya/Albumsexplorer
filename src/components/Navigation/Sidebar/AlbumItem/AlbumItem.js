@@ -17,11 +17,13 @@ const AlbumItem = ({ onAlbumClick, key, title, userId }) => {
 
   return (
     <StyledAlbumItem>
-      { username && <div
-        onClick={onAlbumClick}
-        key={key}>
-        {title}<div>{username}</div>
-      </div> }
+      { username &&
+        <div
+          onClick={onAlbumClick}
+          key={key}>
+            <p>Title: {title}</p>
+            <p>Author: {username}</p>
+        </div> }
     </StyledAlbumItem>
   )
 }

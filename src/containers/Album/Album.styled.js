@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledAlbum = styled.div`
-  display: flex;
-  justify-content: center;
-  maxWidth: '80%', 
-  top: '90px'
+  .back-button {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    border-radius: 50%;
+    font-size: 30px;
+  }
 `;
