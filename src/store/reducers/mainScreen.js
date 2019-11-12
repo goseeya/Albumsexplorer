@@ -6,15 +6,15 @@ const initialState = {
   users: null,
   loading: false,
   error: false,
-  userData: null
+  userData: null,
+  photos: null
 };
 
 const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_MAIN_ALBUM: {
       return {
-        ...state,
-        album: action.album
+        ...state
       }
     }
     case actionTypes.FETCH_ALBUMS_START:
@@ -53,9 +53,28 @@ const albumsReducer = (state = initialState, action) => {
         }
       case actionTypes.FETCH_MAIN_USER_DATA:
         return {
-          ...state,
-          userData: action.userData
+          ...state
         }
+        case actionTypes.FETCH_MAIN_USER_DATA_SUCCESS:
+          return {
+            ...state,
+            userData: action.userData
+          }
+          case actionTypes.FETCH_MAIN_ALBUM_SUCCESS:
+            return {
+              ...state,
+              album: action.album
+            }
+            case actionTypes.FETCH_MAIN_PHOTOS:
+              return {
+                ...state
+              }
+
+              case actionTypes.FETCH_MAIN_PHOTOS_SUCCESS:
+                return {
+                  ...state,
+                  photos: action.photos
+                }
     default:
       return {
         ...state

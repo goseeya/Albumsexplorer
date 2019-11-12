@@ -20,6 +20,8 @@ const Sidebar = () => {
   let albumsToRender = null;
   const openMain = (albumId, userId) => {
     dispatch(actions.fetchMainAlbum(albumId));
+    dispatch(actions.fetchMainPhotos(albumId));
+
     dispatch(actions.fetchMainUserData(userId));
 
     history.push(`/details/${albumId}`);

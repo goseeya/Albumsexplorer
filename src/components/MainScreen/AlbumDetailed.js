@@ -21,14 +21,14 @@ const AlbumDetailed = ({ title, username, usermail, userphone, userwebsite, phot
   return (
     <StyledAlbumDetailed>
       { loading && <Spinner />}
-      { album &&
+      { 
           <div>{title}
           <p>{username}</p>
           <p>{usermail}</p>
           <p>{userphone}</p>
           <p>{userwebsite}</p>
 
-          {photos.map(photo => <div><p>{photo.title}</p><img onClick={() => showBigPicture(photo.url)} src={photo.thumbnailUrl} /></div>)}
+          {photos && photos.map(photo => <div><p>{photo.title}</p><img onClick={() => showBigPicture(photo.url)} src={photo.thumbnailUrl} /></div>)}
           </div>}
           {showPic && <div><img src={url} /><button onClick={() => setShowPic(false)}>close</button></div>}
     </StyledAlbumDetailed>

@@ -18,7 +18,7 @@ const AlbumDetail = ({ title, username, usermail, userphone, userwebsite, photos
           <p>{usermail}</p>
           <p>{userphone}</p>
           <p>{userwebsite}</p>
-          {photos.map(photo => <div></div>)}
+          {photos && photos.map(photo => <div></div>)}
           </div>}
     </StyledAlbum>
   );
