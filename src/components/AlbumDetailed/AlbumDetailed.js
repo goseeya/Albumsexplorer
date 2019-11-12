@@ -28,7 +28,7 @@ const AlbumDetailed = ({ title, username, usermail, userphone, userwebsite, phot
           <p>E-mail: {usermail}</p>
           <p>Phone: {userphone}</p>
           <p>Website: {userwebsite}</p>
-          {photos && photos.map(photo => <div><p>Photo title: {photo.title}</p><img onClick={() => showBigPicture(photo.url)} src={photo.thumbnailUrl} /></div>)}
+          {photos && photos.map(photo => <div key={photo.id}><p>Photo title: {photo.title}</p><img onClick={() => showBigPicture(photo.url)} src={photo.thumbnailUrl} /></div>)}
           { posts && <div>
             <p>1st post title: {posts[0].title}</p>
             <p>2nd post title: {posts[1].title}</p>

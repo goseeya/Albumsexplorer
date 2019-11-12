@@ -10,7 +10,6 @@ const AlbumItem = ({ onAlbumClick, key, title, userId }) => {
       `https://jsonplaceholder.typicode.com/users/${userId}`
   )
   .then(res => {
-    console.log(res)
     setUsername(res.data.username)
   });
 });
