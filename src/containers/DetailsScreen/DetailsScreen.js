@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import store from '../../store/Store';
 
 import Album from '../Album/Album';
-import AlbumsList from '../../containers/AlbumsList/AlbumsList';
 import Topbar from '../Topbar/Topbar';
 
 const DetailsScreen = () => {

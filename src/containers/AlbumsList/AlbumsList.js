@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import { StyledAlbumsList } from './AlbumsList.styled';
 import AlbumItem from '../../components/Navigation/Sidebar/AlbumItem/AlbumItem';
 import * as actions from '../../store/actions/actions';
-import axios from 'axios';
 
 const AlbumsList = () => {
   const dispatch = useDispatch();
@@ -15,6 +14,7 @@ const AlbumsList = () => {
   useEffect(() => {
     dispatch(actions.fetchAlbumsStart(currPageStartIndex));
   }, [])
+//TODO correct above
 
   const openMain = (albumId, userId) => {
     dispatch(actions.fetchMainAlbumStart(albumId));

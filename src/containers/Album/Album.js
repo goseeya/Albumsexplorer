@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import Spinner from '../../components/UI/Spinner/Spinner';
 import { StyledAlbum } from './Album.styled';
 import AlbumDetailed from '../../components/AlbumDetailed/AlbumDetailed';
-import axios from 'axios';
-import SimpleStorage from "react-simple-storage";
-
 
 const Album = () => {
 

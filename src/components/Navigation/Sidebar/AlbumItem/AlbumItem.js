@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';import { StyledAlbumItem } from './AlbumItem.styled';
+import { StyledAlbumItem } from './AlbumItem.styled';
 import axios from 'axios';
 
 const AlbumItem = ({ onAlbumClick, key, title, userId }) => {
@@ -18,8 +18,7 @@ const AlbumItem = ({ onAlbumClick, key, title, userId }) => {
     <StyledAlbumItem>
       { username &&
         <div
-          onClick={onAlbumClick}
-          key={key}>
+          onClick={onAlbumClick}>
             <p>Title: {title}</p>
             <p>Author: {username}</p>
         </div> }
