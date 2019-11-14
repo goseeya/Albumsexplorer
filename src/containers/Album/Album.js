@@ -19,10 +19,10 @@ const Album = () => {
   const photos = JSON.parse(window.localStorage.getItem("photos")) || photosFromState;
   const posts = JSON.parse(window.localStorage.getItem("posts")) || postsFromState;
 
-  useEffect(() => window.localStorage.setItem("currAlbumDetailed", JSON.stringify(currAlbumDetailed)));
-  useEffect(() => window.localStorage.setItem("userData", JSON.stringify(userData)));
-  useEffect(() => window.localStorage.setItem("photos", JSON.stringify(photos)));
-  useEffect(() => window.localStorage.setItem("posts", JSON.stringify(posts)));
+  useEffect(() => window.localStorage.setItem("currAlbumDetailed", JSON.stringify(currAlbumDetailed)), currAlbumDetailed);
+  useEffect(() => window.localStorage.setItem("userData", JSON.stringify(userData)), userData);
+  useEffect(() => window.localStorage.setItem("photos", JSON.stringify(photos)), photos);
+  useEffect(() => window.localStorage.setItem("posts", JSON.stringify(posts)), photos);
 
 
   const goBack = () => {

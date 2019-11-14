@@ -12,7 +12,7 @@ const AlbumItem = ({ onAlbumClick, key, title, userId }) => {
   .then(res => {
     setUsername(res.data.username)
   });
-});
+}, []);
 
   return (
     <StyledAlbumItem>
